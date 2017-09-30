@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> </title>
+        <link rel="stylesheet" href="style.css?v2" type="text/css" />
+    </head>
+    <body>
+        <div id="content">
+        </div>
+        <script type="text/javascript" src="facebook-app.js"></script>
+        <script>
+        
+        var app = FacebookApp();
+          window.fbAsyncInit = app.connect;
+        
+          (function(d, s, id){
+             var js, fjs = d.getElementsByTagName(s)[0];
+             if (d.getElementById(id)) {return;}
+             js = d.createElement(s); js.id = id;
+             js.src = "//connect.facebook.net/en_US/sdk.js";
+             fjs.parentNode.insertBefore(js, fjs);
+           }(document, 'script', 'facebook-jssdk'));
+        </script>
+        
+        
+        <fb:login-button 
+          id="facebookLoginButton"
+          scope="public_profile,email"
+          onlogin="app.checkForLogin();">
+        </fb:login-button>
+        <a id="logoutBtn" onclick="app.logout();" href="#">Logout</a>
+    </body>
+</html>
